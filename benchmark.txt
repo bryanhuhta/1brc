@@ -1,0 +1,7 @@
+Benchmark 1: ./calculate_average_thomaswue.sh
+  Time (mean ± σ):      2.455 s ±  0.015 s    [User: 0.008 s, System: 0.009 s]
+  Range (min … max):    2.438 s …  2.493 s    10 runs
+
+Benchmark 1: ./calculate_average_baseline.sh
+  Time (mean ± σ):     290.576 s ± 24.469 s    [User: 281.951 s, System: 8.953 s]
+  Range (min … max):   263.979 s … 343.829 s    10 runs

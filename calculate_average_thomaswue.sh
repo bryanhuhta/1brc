@@ -19,8 +19,11 @@ if [ -f target/CalculateAverage_thomaswue_image ]; then
     echo "Picking up existing native image 'target/CalculateAverage_thomaswue_image', delete the file to select JVM mode." 1>&2
     target/CalculateAverage_thomaswue_image
 else
-    JAVA_OPTS="--enable-preview"
+    export PYROSCOPE_APPLICATION_NAME="thomasswue"
+    export PYROSCOPE_SERVER_ADDRESS="http://localhost:4040"
+    export PYROSCOPE_PROFILER_ALLOC="512"
+
+    JAVA_OPTS="--enable-preview -javaagent:pyroscope.jar"
     echo "Chosing to run the app in JVM mode as no native image was found, use prepare_thomaswue.sh to generate." 1>&2
     java $JAVA_OPTS --class-path target/average-1.0.0-SNAPSHOT.jar dev.morling.onebrc.CalculateAverage_thomaswue
 fi
-

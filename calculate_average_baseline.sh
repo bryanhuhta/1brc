@@ -15,5 +15,9 @@
 #  limitations under the License.
 #
 
-JAVA_OPTS=""
+export PYROSCOPE_APPLICATION_NAME="baseline"
+export PYROSCOPE_SERVER_ADDRESS="http://localhost:4040"
+export PYROSCOPE_PROFILER_ALLOC="512"
+
+JAVA_OPTS="-javaagent:pyroscope.jar"
 java $JAVA_OPTS --class-path target/average-1.0.0-SNAPSHOT.jar dev.morling.onebrc.CalculateAverage_baseline
